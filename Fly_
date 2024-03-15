@@ -1,0 +1,20 @@
+-- Set initial position and velocity
+local x = 0
+local y = 0
+local velocity = 5
+
+function updatePosition()
+    -- Update position based on velocity
+    x = x + (velocity * math.cos(math.rad(45))) -- Adjust angle as needed
+    y = y + (velocity * math.sin(math.rad(45))) -- Adjust angle as needed
+
+    -- Set new position
+    setObjectPosition(x, y)
+end
+
+-- Main loop
+while true do
+    updatePosition()
+    -- Adjust frame rate as needed
+    os.sleep(1)
+end
